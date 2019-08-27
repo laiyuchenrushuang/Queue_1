@@ -53,13 +53,13 @@
         queue.offer(m6);
         int size = queue.size();
         for (int i = 0; i < size; i++) {
-            queue.peek().start(); //``` 顶项执行,peek减少异常为空的情况（有返回为true,无则false），比element()安全 ```
-            queue.poll(); //``` 去掉顶项 take ,remove（take会出现无序的现象，poll和remove有序，队列为空poll返回为null,不像remove抛出异常）```
+            queue.peek().start(); //` 顶项执行,peek减少异常为空的情况（有返回为true,无则false），比element()安全 `
+            queue.poll(); //` 去掉顶项 take ,remove（take会出现无序的现象，poll和remove有序，队列为空poll返回为null,不像remove抛出异常`
         }
      }    
 
 ----------------------------------------------------------
-```
+
   结果显示：  
   2019-08-27 14:11:29.261 9559-9574/? D/lylog: 任务1<br>
   2019-08-27 14:11:29.261 9559-9575/? D/lylog: 任务1<br>
@@ -73,13 +73,13 @@
   2019-08-27 14:11:29.266 9559-9583/? D/lylog: 任务6<br>
   2019-08-27 14:11:29.266 9559-9584/? D/lylog: 任务6<br>
   2019-08-27 14:11:29.266 9559-9585/? D/lylog: 任务6<br> 
-```
+
 ---------------------------------------------------------- 
                                  
   __LinkedBlockingDeque 和 LinkedBlockingQueue 没固定队列大小，执行添加完成的元素为止，改成ArrayBlockingQueue，需要添加数目大小，当越界时候，抛出异常。__
 
 -----------------------------------------------------------
-```
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,15 +127,15 @@ class MyThread extends Thread implements Comparable<MyThread>{
     @Override
     public int compareTo(MyThread o) {
         if(o.i == 6){
-            return 1; //优先
+            return 1; //`优先`
         }else{
             return -1;
         }
     }
 }
-```
+
 -------------------------------------------------------------
-```
+
   结果显示：  
   2019-08-27 14:35:38.160 11616-11631/com.ly.workqueue D/lylog: 任务6<br>
   2019-08-27 14:35:38.160 11616-11632/com.ly.workqueue D/lylog: 任务6<br>
@@ -149,5 +149,5 @@ class MyThread extends Thread implements Comparable<MyThread>{
   2019-08-27 14:35:38.162 11616-11640/com.ly.workqueue D/lylog: 任务5<br>
   2019-08-27 14:35:38.163 11616-11641/com.ly.workqueue D/lylog: 任务1<br>
   2019-08-27 14:35:38.163 11616-11642/com.ly.workqueue D/lylog: 任务3<br>
-```
+
 -------------------------------------------------------------
