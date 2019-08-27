@@ -28,7 +28,6 @@
 ---------------------------------------------------------------------------------------------------
 ### Queue与Thread搭配(顺序执行，执行完移除)
 
-```
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +53,11 @@
         queue.offer(m6);
         int size = queue.size();
         for (int i = 0; i < size; i++) {
-            queue.peek().start(); //顶项执行,peek减少异常为空的情况，比element()安全
-            queue.poll(); //去掉顶项 take ,remove
+            queue.peek().start(); //``` 顶项执行,peek减少异常为空的情况（有返回为true,无则false），比element()安全 ```
+            queue.poll(); //``` 去掉顶项 take ,remove（take会出现无序的现象，poll和remove有序，队列为空poll返回为null,不像remove抛出异常）```
         }
      }    
-```
+
 ----------------------------------------------------------
 ```
   结果显示：  
