@@ -53,8 +53,8 @@
         queue.offer(m6);
         int size = queue.size();
         for (int i = 0; i < size; i++) {
-            queue.peek().start(); //` 顶项执行,peek减少异常为空的情况（有返回为true,无则false），比element()安全 `
-            queue.poll(); //` 去掉顶项 take ,remove（take会出现无序的现象，poll和remove有序，队列为空poll返回为null,不像remove抛出异常`
+            queue.peek().start(); //顶项执行,peek减少异常为空的情况（有返回为true,无则false），比element()安全
+            queue.poll(); //去掉顶项 take ,remove（take会出现无序的现象，poll和remove有序，队列为空poll返回为null,不像remove抛出异常
         }
      }    
 
@@ -127,7 +127,7 @@ class MyThread extends Thread implements Comparable<MyThread>{
     @Override
     public int compareTo(MyThread o) {
         if(o.i == 6){
-            return 1; //`优先`
+            return 1; //优先
         }else{
             return -1;
         }
