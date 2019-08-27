@@ -159,3 +159,4 @@ class MyThread extends Thread implements Comparable<MyThread>{
   2019-08-27 14:35:38.163 11616-11642/com.ly.workqueue D/lylog: 任务3<br>
 
 -------------------------------------------------------------
+__PriorityBlockingQueue优先级别的队列，实现一个排序规则，优先处理规则的队列元素__
